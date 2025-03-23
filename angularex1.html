@@ -1,0 +1,45 @@
+
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl"> 
+
+    <form action="successful.html">
+        <p>Write Your First Name:</p>
+        <p>Name: <input type="text" ng-model="firstName"></p>
+
+        <p>Write Your Last Name:</p>
+        <p>Name: <input type="text" ng-model="lastName"></p>
+
+        <p>Write Your Username:</p>
+        <p>Name: <input type="text" ng-model="userName"></p>
+
+        <p>Write Your Password:</p>
+        <p>Name: <input type="password" ng-model="password"></p>
+
+        <p>You wrote: {{ firstName }}</p>
+        <p>You wrote: {{ lastName }}</p>
+        <p>You wrote: {{ userName }}</p>
+        <p>You wrote: {{ password }}</p>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.firstName = "TE";
+            $scope.lastName = "COMP";
+            $scope.userName = "ABC";
+            $scope.password = "XYZ";
+        });
+    </script>
+
+</body>
+</html>
+
+ 
+
