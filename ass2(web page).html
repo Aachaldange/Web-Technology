@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Library</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        input, button { margin: 5px; padding: 10px; }
+        .book-list { margin-top: 20px; }
+        .book-item { background: #f0f0f0; padding: 10px; margin: 5px; }
+        .remove-btn { background: red; color: white; border: none; padding: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>📚 Simple Library</h2>
+
+    <input type="text" id="title" placeholder="Book Title">
+    <input type="text" id="author" placeholder="Author">
+    <button onclick="addBook()">Add Book</button>
+
+    <div class="book-list" id="bookList"></div>
+
+    <script>
+        function addBook() {
+            let title = document.getElementById("title").value;
+            let author = document.getElementById("author").value;
+            if (title === "" || author === "") {
+                alert("Enter both Title and Author!");
+                return;
+            }
+
+            let bookList = document.getElementById("bookList");
+            let bookItem = document.createElement("div");
+            bookItem.className = "book-item";
+            bookItem.innerHTML = `${title} by ${author} <button class="remove-btn" onclick="this.parentElement.remove()">Remove</button>`;
+            bookList.appendChild(bookItem);
+
+            document.getElementById("title").value = "";
+            document.getElementById("author").value = "";
+        }
+    </script>
+
+</body>
+</html>

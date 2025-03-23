@@ -1,5 +1,3 @@
-
- 
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +5,7 @@
 </head>
 <body ng-app="myApp" ng-controller="myCtrl"> 
 
-    <form action="successful.html">
+    <form ng-submit="submitForm()">
         <p>Write Your First Name:</p>
         <p>Name: <input type="text" ng-model="firstName"></p>
 
@@ -23,7 +21,6 @@
         <p>You wrote: {{ firstName }}</p>
         <p>You wrote: {{ lastName }}</p>
         <p>You wrote: {{ userName }}</p>
-        <p>You wrote: {{ password }}</p>
 
         <input type="submit" value="Submit">
     </form>
@@ -34,12 +31,14 @@
             $scope.firstName = "TE";
             $scope.lastName = "COMP";
             $scope.userName = "ABC";
-            $scope.password = "XYZ";
+            $scope.password = ""; // Empty password for security
+
+            $scope.submitForm = function() {
+                alert("Form submitted!"); 
+                window.location.href = "successful.html"; 
+            };
         });
     </script>
 
 </body>
 </html>
-
- 
-
